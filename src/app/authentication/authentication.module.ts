@@ -12,7 +12,7 @@ import { LoginComponent } from './login/login.component';
     CommonModule
   ],
   exports:[
-    LoginComponent,
+    LoginComponent
   ]
 })
 export class AuthenticationModule { }
