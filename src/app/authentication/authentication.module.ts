@@ -10,12 +10,9 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     CommonModule
-<<<<<<< Updated upstream
-=======
   ],
   exports:[
     LoginComponent,
->>>>>>> Stashed changes
   ]
 })
 export class AuthenticationModule { }
