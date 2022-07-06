@@ -17,7 +17,6 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Date</th>
                         <th>Platform</th>
                         <th>full_Name</th>
@@ -25,79 +24,67 @@
                         <th>Passedout</th>
                         <th>Backlogs</th>
                         <th>Qualification</th>
-                        <th>Email</th>
                         <th>City</th>
                         <th>Assigne</th>
                         <th>status</th>
                         <th>Course</th>
                         <th>Batch</th>
-                        <th>Comments</th>
+                        <!-- <th>Comments</th> -->
+                        <th>action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let enquiry of allenquiry">
+                        <td>{{ enquiry?.date }}</td>
+                        <td>{{ enquiry?.platform }}</td>
+                        <td>{{ enquiry?.full_name }}</td>
+                        <td>{{ enquiry?.phone_number }}</td>
+                        <td>{{ enquiry?.passedout }}</td>
+                        <td>{{ enquiry?.backlogs }}</td>
+                        <td>{{ enquiry?.qualification }}</td>
+                        <td>{{ enquiry?.city }}</td>
+                        <td>{{ enquiry?.assignee }}</td>
+                        <td>{{ enquiry?.status }}</td>
+                        <td>{{ enquiry?.course }}</td>
+                        <td>{{ enquiry?.batch }}</td>
+                        <td>{{ enquiry?.comments }}</td>
+                        <td>{{ enquiry?.action }}</td>
+                        <div class="container">
+
+                            <!-- Button to Open the Modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                              Open modal
+                            </button>
+                          
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                
+                                  <!-- Modal Header -->
+                                  <div class="modal-header">
+                                    <h1 class="modal-title">Comments</h1>
+                                    <button type="button" class="close" data-dismiss="modal">×</button>
+                                  </div>
+                                  
+                                  <!-- Modal body -->
+                                  <div class="modal-body">
+                                 </div>
+                                  
+                                  <!-- Modal footer -->
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            
+                          </div>
+                          
+                        <td><button (click)="delete(enquiry.id)">delete</button></td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">7</th>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">8</th>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">9</th>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">10</th>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">11</th>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">12</th>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                                       
                 </tbody>
             </table>
         </div>

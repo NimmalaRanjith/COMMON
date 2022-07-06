@@ -1,84 +1,98 @@
 
-<div class="card-block">
+<div class="card-block" >
     <h4 class="sub-title">Basic Inputs</h4>
-    <form>
+    <form [formGroup]="enquiryform">
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label">date:</label>
+            <label for="date" class="col-sm-2 col-form-label">date:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control"
-                placeholder="Enter Date">
+                <input formControlName="date" type="date" class="form-control"
+                placeholder="date-month-year">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Platform:</label>
+            <div class="col-sm-10">
+                <input formControlName="platform" type="text" class="form-control"
+                placeholder="Enter Your platform">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Email:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control"
-                placeholder="Enter Your Name">
+                <input formControlName="email" type="text" class="form-control"
+                placeholder="Enter Your email">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Full_name:</label>
+            <div class="col-sm-10">
+                <input formControlName="full_name" type="text" class="form-control"
+                placeholder="Enter Your Number">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Phone_Number:</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control"
+                <input formControlName="phone_number" type="number" class="form-control"
                 placeholder="Enter Your Number">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Passedout:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control"
+                <input formControlName="passedout" type="text" class="form-control"
                 placeholder="Enter Year">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Backlogs:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control"
+                <input formControlName="backlogs" type="text" class="form-control"
                 placeholder="Number Of Backlogs">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Qualification:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control"
-                    value="Enter Your Qualification">
+                    <input formControlName="qualification" type="text" class="form-control"
+                    placeholder="Enter qualification">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">City:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control"
-                        value="Enter Your City">
+                        <input formControlName="city" type="text" class="form-control"
+                        placeholder="Enter city">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Assignee:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control"
-                            value="Enter Name">
+                            <input formControlName="assignee" type="text" class="form-control"
+                            placeholder="Enter name">
                         </div>
                     </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Status:</label>
                 <div class="col-sm-10">
-                    <select name="select" class="form-control">
-                        <option value="opt1">Select One Value Only</option>
-                        <option value="opt2">Not answered</option>
-                        <option value="opt3">Invalid number</option>
-                        <option value="opt4">Inprogress</option>
-                        <option value="opt5">Interested</option>
-                        <option value="opt6">Converted</option>
+                    <select formControlName="status" name="select" class="form-control">
+                        <option value="select one value only">Select One Value Only</option>
+                        <option value="not answered">Not answered</option>
+                        <option value="invalid number">Invalid number</option>
+                        <option value="inprogress">Inprogress</option>
+                        <option value="intrested">Interested</option>
+                        <option value="converted">Converted</option>
                     </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Course:</label>
                 <div class="col-sm-10">
-                    <select name="select" class="form-control">
-                        <option value="opt1">Select Any One Course </option>
-                        <option value="opt2">Bigdata</option>
-                        <option value="opt3">Python</option>
-                        <option value="opt4">Angular</option>
+                    <select formControlName="course" name="select" class="form-control">
+                        <option value="select any one course">Select Any One Course </option>
+                        <option value="bigdata">Bigdata</option>
+                        <option value="python">Python</option>
+                        <option value="angular">Angular</option>
                     </select>
                 </div>
             </div>
@@ -86,17 +100,18 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Batch:</label>
                 <div class="col-sm-10">
-                    <input type="date"
+                    <input formControlName="batch" type="date"
                     class="form-control form-control-round"
-                    placeholder="Course-date-month-year">
+                    placeholder="date-month-year">
                 </div>
             </div>
             
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Comments:</label>
                         <div class="col-sm-10">
-                            <textarea rows="5" cols="5" class="form-control"
+                            <textarea formControlName="comments" rows="5" cols="5" class="form-control"
                             placeholder="Type text....."></textarea>
                         </div>
                     </div>
+                       <button (click)="submit()">submit</button>
                 </form>

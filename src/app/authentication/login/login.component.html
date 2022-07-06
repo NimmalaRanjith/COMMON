@@ -64,7 +64,7 @@
                           <div class="text-center">
                               <img src="assets/images/logo.png" alt="logo.png">
                           </div>
-                          <div class="auth-box card">
+                          <div class="auth-box card" [formGroup]="loginform" >
                               <div class="card-block">
                                   <div class="row m-b-20">
                                       <div class="col-md-12">
@@ -72,12 +72,12 @@
                                       </div>
                                   </div>
                                   <div class="form-group form-primary">
-                                      <input type="text" name="email" class="form-control" required="">
+                                      <input formControlName="email" type="text" name="email" class="form-control" required="">
                                       <span class="form-bar"></span>
                                       <label class="float-label">Your Email Address</label>
                                   </div>
                                   <div class="form-group form-primary">
-                                      <input type="password" name="password" class="form-control" required="">
+                                      <input type="password" formControlName="password" name="password" class="form-control" required="">
                                       <span class="form-bar"></span>
                                       <label class="float-label">Password</label>
                                   </div>
@@ -97,7 +97,7 @@
                                   </div>
                                   <div class="row m-t-30">
                                       <div class="col-md-12">
-                                          <button type="button" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Sign in</button>
+                                          <button (click)="signin()" type="button" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Sign in</button>
                                       </div>
                                   </div>
                                   <hr/>
